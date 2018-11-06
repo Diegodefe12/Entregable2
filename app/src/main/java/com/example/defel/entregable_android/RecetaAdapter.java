@@ -15,22 +15,23 @@ import java.util.List;
 public class RecetaAdapter extends RecyclerView.Adapter {
     private List<Receta> listaDeRecetas;
 
-
-
+    public RecetaAdapter(List<Receta> listaDeRecetas) {
+        this.listaDeRecetas = listaDeRecetas;
+    }
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        LayoutInflater inflador = LayoutInflater.from(viewGroup.getContext());
-        View viewCelda = inflador.inflate(R.layout.celda_receta,viewGroup,false);
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+        LayoutInflater inflador = LayoutInflater.from(parent.getContext());
+        View viewCelda = inflador.inflate(R.layout.celda_receta,parent,false);
         RecetaViewHolder recetaViewHolder = new RecetaViewHolder(viewCelda);
         return recetaViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int i) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
-    Receta receta = listaDeRecetas.get(i);
+    Receta receta = listaDeRecetas.get(position);
     RecetaViewHolder recetaViewHolder = (RecetaViewHolder) holder;
     recetaViewHolder.bind(receta);
 
