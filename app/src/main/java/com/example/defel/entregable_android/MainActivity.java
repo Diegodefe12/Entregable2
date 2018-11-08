@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity  implements RecetasFragment.
 
         Bundle bundle = new Bundle();
 
-        bundle.putSerializable(DetalleRecetaActivity.KEY_RECETA,receta);
+        bundle.putSerializable(DetalleRecetaFragment.KEY_RECETA,receta);
 
         intent.putExtras(bundle);
         startActivity(intent);

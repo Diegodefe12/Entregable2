@@ -37,14 +37,12 @@ public class RecetasFragment extends Fragment  implements RecetaAdapter.Listener
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_recetas, container, false);
 
         recyclerViewRecetas = view.findViewById(R.id.recyclerViewRecetas);
         List<Receta> recetas = cargarRecetas();
 
         RecetaAdapter recetasAdapter = new RecetaAdapter(recetas,this);
-        //creamos el layoutManager
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
 
         recyclerViewRecetas.setLayoutManager(linearLayoutManager);
