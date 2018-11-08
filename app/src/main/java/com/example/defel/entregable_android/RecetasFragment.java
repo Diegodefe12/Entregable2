@@ -40,7 +40,7 @@ public class RecetasFragment extends Fragment  implements RecetaAdapter.Listener
         View view = inflater.inflate(R.layout.fragment_recetas, container, false);
 
         recyclerViewRecetas = view.findViewById(R.id.recyclerViewRecetas);
-        List<Receta> recetas = cargarRecetas();
+        List<Receta> recetas = RecetasProvider.cargarRecetas();
 
         RecetaAdapter recetasAdapter = new RecetaAdapter(recetas,this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
@@ -52,15 +52,7 @@ public class RecetasFragment extends Fragment  implements RecetaAdapter.Listener
 
     return view;
     }
-    private List<Receta> cargarRecetas() {
-        List<Receta> recetas = new ArrayList<>();
-        recetas.add(new Receta(R.drawable.tiramisu,"Tiramisu", "lalala", "lalala"));
-        recetas.add(new Receta(R.drawable.chocotorta,"Chocotorta", "lalala", "lalala"));
-        recetas.add(new Receta(R.drawable.flan,"Flan", "lalala", "lalala"));
 
-
-        return recetas;
-    }
 
     @Override
     public void informarSeleccionado(Receta receta) {
