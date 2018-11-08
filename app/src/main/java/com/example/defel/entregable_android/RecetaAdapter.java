@@ -14,9 +14,11 @@ import java.util.List;
 
 public class RecetaAdapter extends RecyclerView.Adapter {
     private List<Receta> listaDeRecetas;
+    private ListenerRecetasAdapter listenerRecetasAdapter;
 
-    public RecetaAdapter(List<Receta> listaDeRecetas) {
+    public RecetaAdapter(List<Receta> listaDeRecetas,ListenerRecetasAdapter listenerRecetasAdapter) {
         this.listaDeRecetas = listaDeRecetas;
+        this.listenerRecetasAdapter = listenerRecetasAdapter;
     }
 
     @NonNull
@@ -48,6 +50,8 @@ public class RecetaAdapter extends RecyclerView.Adapter {
         private TextView textViewTitulo;
         private TextView textViewIngredientes;
         private TextView textViewPreparacion;
+        private Receta receta;
+
 
         public RecetaViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -55,13 +59,26 @@ public class RecetaAdapter extends RecyclerView.Adapter {
             this.textViewTitulo = itemView.findViewById(R.id.celdaReceta_TextView_titulo);
             this.textViewIngredientes = itemView.findViewById(R.id.celdaReceta_TextView_ingredientes);
             this.textViewPreparacion = itemView.findViewById(R.id.celdaReceta_TextView_preparacion);
+
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listenerRecetasAdapter.informarSeleccionado(receta);
+
+                }
+            });
         }
 
         public void bind (Receta unaReceta){
+            this.receta = unaReceta;
             imageViewFoto.setImageResource(unaReceta.getFoto());
             textViewTitulo.setText(unaReceta.getTitulo());
             textViewIngredientes.setText(unaReceta.getIngredientes());
             textViewPreparacion.setText(unaReceta.getPreparacion());
         }
+    }
+    public interface ListenerRecetasAdapter{
+        public void informarSeleccionado(Receta receta);
     }
 }

@@ -1,5 +1,6 @@
 package com.example.defel.entregable_android;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -16,7 +17,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  implements RecetasFragment.ListenerRecyclerViewFragment{
 
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
@@ -79,5 +80,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void informarSeleccion(Receta receta) {
 
+        Intent intent = new Intent(this,DetalleRecetaActivity.class);
+
+        Bundle bundle = new Bundle();
+
+        bundle.putSerializable(DetalleRecetaActivity.KEY_RECETA,receta);
+
+        intent.putExtras(bundle);
+        startActivity(intent);
+
+
+    }
 }

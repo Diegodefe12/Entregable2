@@ -1,6 +1,8 @@
 package com.example.defel.entregable_android;
 
-public class Receta {
+import java.io.Serializable;
+
+public class Receta implements Serializable {
     private Integer foto;
     private String titulo;
     private String ingredientes;
