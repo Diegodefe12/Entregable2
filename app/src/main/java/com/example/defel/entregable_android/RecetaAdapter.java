@@ -75,7 +75,7 @@ public class RecetaAdapter extends RecyclerView.Adapter {
             imageViewFoto.setImageResource(unaReceta.getFoto());
             textViewTitulo.setText(unaReceta.getTitulo());
             textViewIngredientes.setText(unaReceta.getIngredientes());
-            textViewPreparacion.setText(unaReceta.getPreparacion());
+            
         }
     }
     public interface ListenerRecetasAdapter{
