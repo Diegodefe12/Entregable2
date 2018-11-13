@@ -18,8 +18,16 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:textSize="20dp"
         android:gravity="center"
         android:text="TITULO" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="INGREDIENTES"
+        android:textStyle="italic"
+        android:gravity="center_horizontal"/>
 
     <TextView
         android:id="@+id/detalleFragment_TextView_ingredientes"
@@ -27,6 +35,13 @@
         android:layout_height="0dp"
         android:layout_weight="5"
         android:text="Ingredientes:" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="PREPARACIÓN"
+        android:textStyle="italic"
+        android:gravity="center_horizontal"/>
 
     <TextView
         android:id="@+id/detalleFragment_TextView_preparacion"

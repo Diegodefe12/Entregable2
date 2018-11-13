@@ -8,13 +8,14 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:src="@drawable/imagen_home" />
+        android:src="@drawable/cocina_soltero"
+        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="COMO EN CASA"
+        android:text="¡MAMÁ! Aprendí a cocinar"
         android:textSize="80dp"
-        android:textColor="#000"
+        android:textColor="#311b92"
         android:textStyle="italic"
         android:gravity="top|center"/>
 
